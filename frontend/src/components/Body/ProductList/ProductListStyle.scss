@@ -1,0 +1,46 @@
+@import "../../../sass/general.scss";
+
+.productListMainContainer {
+  background-color: $backBody;
+
+  @include breakpoint-up(small) {
+    // margin-top: 30%;
+  }
+  @include breakpoint-up(medium) {
+    margin-top: 40%;
+  }
+
+  @include breakpoint-up(large) {
+    width: 100%;
+    margin-top: 0;
+  }
+
+  h1 {
+    margin-top: 20px;
+    font-size: 20px;
+    text-align: center;
+    @include breakpoint-up(medium) {
+      font-size: 32px;
+      width: 75%;
+      margin: 10px auto 50px auto;
+      text-align: left;
+    }
+  }
+  &__productList {
+    margin: 0;
+    padding-bottom: 30px;    
+    @include breakpoint-up(medium) {
+      display: grid;
+      row-gap: 30px;
+      column-gap: 10px;
+      width: 90%;
+      margin: auto;
+      grid-template-columns: repeat(2, 50%);
+    }
+    @include breakpoint-up(large) {
+      column-gap: 5px;
+      width: 80%;
+    }
+    
+  }
+}

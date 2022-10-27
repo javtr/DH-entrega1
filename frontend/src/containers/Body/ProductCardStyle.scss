@@ -1,0 +1,182 @@
+@import "../sass/../../sass/general.scss";
+
+.productCardMainContainer {
+  background-color: $light;
+  box-shadow: 2px 2px 2px 2px #f3f1ed;
+  width: 85%;
+  height: 430px;
+  margin: auto;
+  border-radius: 10px;
+  margin-bottom: 30px;
+
+  @include breakpoint-up(small) {
+    display: flex;
+    height: 300px;
+    width: 75%;
+  }
+  @include breakpoint-up(medium) {
+    width: 95%;
+  }
+
+  @include breakpoint-up(large) {
+    width: 90%;
+    margin-left: 10%;
+    height: 90%;
+  }
+
+  &__imageContainer {
+    border-radius: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+
+    @include breakpoint-down(small) {
+      max-height: 35%;
+      overflow: hidden;
+    }
+
+    @include breakpoint-up(small) {
+      height: 100%;
+      width: 60%;
+      border-top-left-radius: 10px;
+      border-bottom-left-radius: 10px;
+      overflow: hidden;
+    }
+
+
+
+    @include breakpoint-up(medium) {
+      border-top-right-radius: 0;
+      border-top-left-radius: 10px;
+      border-bottom-left-radius: 10px;
+    }
+
+    img {
+      height: 100%;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+
+      @include breakpoint-down(small) {
+        transform: translateY(-28%);
+        width: 100%;
+      }
+
+      @include breakpoint-up(small) {
+        transform: translateX(-35%);
+      }
+
+
+      @include breakpoint-up(medium) {
+        border-top-right-radius: 0;
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+      }
+    }
+  }
+  &__contentContainer {
+    width: 90%;
+    margin: auto;
+    &__header {
+      @include breakpoint-up(small) {
+        width: 90%;
+        margin: auto;
+      }
+      display: flex;
+      &__endContainer {
+        height: 70px;
+        width: 35%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: end;
+
+        &--calification {
+          margin: 0;
+          font-size: 14px;
+          color: #383b58;
+          font-family: "Roboto", sans-serif;
+          font-weight: 700;
+        }
+        &--numberContainer {
+          font-size: 20px;
+          margin: 0;
+          background-color: #383b58;
+          color: $light;
+          width: 30px;
+          height: 30px;
+          border-radius: 10px;
+          text-align: center;
+        }
+      }
+      &__startContainer {
+        &--star {
+          color: #fbc02d;
+        }
+        height: 70px;
+        width: 65%;
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+        span {
+          font-size: 14px;
+          opacity: 60%;
+          color: #383b58;
+        }
+        p {
+          margin: 0;
+          color: #383b58;
+          font-weight: 700;
+          font-family: "Roboto", sans-serif;
+          font-size: 22px;
+        }
+      }
+    }
+    &__ubicationContainer {
+      width: 90%;
+      margin: auto;
+      @include breakpoint-up(small) {
+        width: 90%;
+      }
+      p {
+        color: #383b58;
+        font-size: 14px;
+        font-family: "Roboto", sans-serif;
+        span {
+          text-transform: uppercase;
+          color: #fbc02d;
+        }
+      }
+    }
+    &__footer {
+      @include breakpoint-up(small) {
+        width: 90%;
+        margin: auto;
+      }
+      p {
+        font-size: 14px;
+        width: 97%;
+        margin: auto;
+        font-family: "Roboto", sans-serif;
+        line-height: 16px;
+        font-weight: 500;
+        color: #383b58;
+        @include breakpoint-up(small) {
+          width: 100%;
+        }
+        @include breakpoint-up(large) {
+          width: 100%;
+        }
+      }
+      button {
+        height: 40px;
+        margin-top: 10px;
+        width: 100%;
+        border-radius: 5px;
+        font-family: "Roboto", sans-serif;
+        border: none;
+        background-color: $colorPpal;
+        color: $light;
+        font-size: 16px;
+      }
+    }
+  }
+}

@@ -1,0 +1,61 @@
+@import "../../../sass/general.scss";
+
+.SearchBarContainer {
+  background-color: $colorOscuro;
+  padding-top: 2px;
+  h1 {
+    color: $light;
+    width: 80%;
+    margin: auto auto 0 auto;
+    font-size: 20px;
+    text-align: center;
+    @include breakpoint-up(medium) {
+      font-size: 35px;
+    }
+    @include breakpoint-up(large) {
+      font-size: 35px;
+    }
+  }
+  form {
+    width: 70%;
+    margin: auto auto 0 auto;
+    @include breakpoint-up(medium) {
+      width: 85%;
+      display: flex;
+    }
+
+    button {
+      height: 40px;
+      width: 100%;
+      background-color: $colorPpal;
+      border-radius: 5px;
+      border: none;
+      color: $buttonsText;
+      font-weight: 700;
+      margin-bottom: 35px;
+      @include breakpoint-up(medium) {
+        margin-left: 5px;
+        width: 30%;
+      }
+      @include breakpoint-up(large) {
+        width: 20%;
+        margin-bottom: 40px;
+      }
+      &:hover {
+        cursor: pointer;
+        color: black;
+      }
+    }
+  }
+  &__formContainer-inputBox {
+    height: 40px;
+    margin-bottom: 12px;
+    @include breakpoint-up(medium) {
+      margin-left: 5px;
+      width: 40%;
+    }
+    @include breakpoint-up(large) {
+      width: 50%;
+    }
+  }
+}

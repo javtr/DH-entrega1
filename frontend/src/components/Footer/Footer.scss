@@ -1,0 +1,28 @@
+@import "../../sass/general.scss";
+
+.footer {
+    margin: 0;
+    height: 58px;
+    background-color: $colorPpal;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 50px;
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    color: $buttonsText;
+    p {
+        font-size: 0.9rem;
+    }
+
+    &__icons {
+        font-size: 27px;
+        // padding: 12px;
+        margin: 0 10px;
+
+        @include breakpoint-down(small) {
+            display: none;
+        }
+    }
+}
