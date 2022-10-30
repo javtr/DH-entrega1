@@ -63,6 +63,8 @@
     margin-right: 15px;
     display: flex;
     align-items: center;
+    position: absolute;
+    right: 35px;
 
     @include breakpoint-down(small) {
       display: none;

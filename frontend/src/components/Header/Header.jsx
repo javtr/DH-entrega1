@@ -1,22 +1,23 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect,useContext } from "react";
 import "./Header.scss";
 import logoSm from "./../../img/logoSmYellow.jpg";
 import logoLg from "./../../img/logoLgYellow.jpg";
 import { Link, useNavigate, useLocation } from "react-router-dom";
-
 import { IconContext } from "react-icons";
 import { GiHamburgerMenu } from "react-icons/gi";
+import EmailContext  from "../../context/Context";
 
-export default function Header(props) {
+
+export default function Header() {
   const [flag, setFlag] = useState(false);
   const [sideBar, setSideBar] = useState("sideBarInit");
+
+  const {email,setEmail} = useContext(EmailContext);
 
   const navigate = useNavigate();
 
   const location = useLocation();
   const url = location.pathname;
-
-  console.log(location.pathname);
 
   function linkBurguer(link) {
     setSideBar("sideBarOff");
@@ -41,7 +42,8 @@ export default function Header(props) {
     if (!flag) {
       if (
         localStorage.getItem("email") !== null ||
-        (props.email !== null) & (props.email !== "")
+        (email !== null) & (email !== "")
+        
       ) {
         document.querySelector(".header__buttons").classList.add("hidden");
         document.querySelector(".header__user").classList.remove("hidden");
@@ -49,15 +51,15 @@ export default function Header(props) {
       } else {
         document.querySelector(".header__buttons").classList.remove("hidden");
         document.querySelector(".header__user").classList.add("hidden");
-        props.setEmail("");
+        setEmail("");
         setFlag(false);
       }
     }
-  }, [flag, props]);
+  }, [flag, email]);
 
   const closeSession = () => {
     localStorage.clear();
-    props.setEmail("");
+    setEmail("");
     setFlag(false);
   };
 

@@ -1,28 +1,26 @@
-import React, { useState } from "react";
+import React, { useState,useContext } from "react";
 import "./Login.scss";
 import { Link, useNavigate } from "react-router-dom";
+import  EmailContext  from "../../../context/Context";
 
 /* Por completar: Descargar el repositorio y acomodar el issue */
 
-const Login = (props) => {
-  const email = props.email;
-  const setEmail = props.setEmail;
+const Login = () => {
   const [emailInput, setEmailInput] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
-
+  const {email,setEmail} = useContext(EmailContext);
 
   // Credenciales utilizadas para validar
   const credentials = {
     email: "example@gmail.com",
-    password: "8!bp3VT0R1sd",
+    password: "123456",
   };
 
   //Evento
   const handleSubmit = (e) => {
-    // console.log(password);
-    // console.log(emailInput);
+
     e.preventDefault();
     //Validación en caso de que algun input se encuentre vacío
     if (password !== "" && emailInput !== "") {
@@ -33,13 +31,9 @@ const Login = (props) => {
           password === credentials.password
         ) {
           localStorage.setItem("email", credentials.email);
-          console.log("userEnLogin: " + credentials.email);
           setEmail(emailInput);
           navigate("/");
         } else {
-          // window.alert(
-          //   "Por favor vuelva a intentarlo, sus credenciales son inválidas"
-          // );
           document.querySelector(".invalid").innerHTML =
             "Credenciales inválidas. Vuelve a intentarlo.";
         }
